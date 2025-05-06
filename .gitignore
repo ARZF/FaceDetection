@@ -1,0 +1,10 @@
+# Virtual environments
+venv/
+FaceLandmarkDetectionService/facevenv/
+
+# Images and video files
+*.jpg
+*.jpeg
+*.png
+
+__pycache__/

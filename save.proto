@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package ai;
+
+service save {
+    rpc SaveAgeGender (AgeGender) returns (AgeGenderResponse);
+    rpc SaveLandmarks (Landmarks) returns (LandmarksResponse);
+}
+
+message AgeGender {
+    string redis_key = 1;
+    int32 age = 2;
+    string gender = 3; // e.g., "male", "female", "other"
+}
+
+message Landmarks {
+    string redis_key = 1;
+    repeated float points = 2; // e.g., [x1, y1, x2, y2, ...]
+}
+
+message AgeGenderResponse {
+    bool response = 1;
+}
+message LandmarksResponse {
+    bool response = 1;
+}
